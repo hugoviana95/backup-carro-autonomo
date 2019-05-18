@@ -34,6 +34,13 @@ void ch2(){
   Serial.print("tON2:");
   Serial.println(pwm_tempo_ch2);
   dutyCycle_ch2 = (pwm_tempo_ch2*0.000001*freq_ch2*4095);
+  // Limitador de velocidade
+  dutyCycle_ch2 = (((dutyCycle_ch2 - 516)/2) + 516);
+  if (dutyCycle_ch2 > 580)
+    dutyCycle_ch2 = 580;
+  if (dutyCycle_ch2 < 485)
+    dutyCycle_ch2 = 485;
+  //----------------------
   Serial.print("dutycycle2:");
   Serial.println(dutyCycle_ch2);
   ledcWrite(canal_ch2, dutyCycle_ch2);
@@ -53,11 +60,10 @@ void setup() {
   ledcAttachPin(PWM_OUT_CH2, canal_ch2);
   ledcWrite(canal_ch2, dutyCycle_ch2);
 
-  Serial.begin(115200);
+  Serial.begin(9600);
 }
 
 void loop() {
   ch1();
   ch2();
 }
-
