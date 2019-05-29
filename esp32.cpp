@@ -34,9 +34,9 @@ void ch2(){
   Serial.print("tON2:");
   Serial.println(pwm_tempo_ch2);
   dutyCycle_ch2 = (pwm_tempo_ch2*0.000001*freq_ch2*4095);
-  
+
   // Limitador de velocidade
-  dutyCycle_ch2 = map(dutyCycle_ch2, 310, 723, 400, 600);
+  dutyCycle_ch2 = map(dutyCycle_ch2, 310, 723, 390, 640);
 
   Serial.print("dutycycle2:");
   Serial.println(dutyCycle_ch2);
