@@ -30,13 +30,13 @@ Xmax=45
 Xmin=-45
 
 #criar pasta de teste
-dir = './teste1'  # cria pasta de testes com localização e data
+dir = '/home/aluno/Documentos/carro_autonomo/src/teste1'  # cria pasta de testes com localização e data
 os.mkdir(dir)
 
 # criamos pgastas para guardar as imaens para cada camera
-can1 = './teste1/Camera_Depth'
+can1 = '/home/aluno/Documentos/carro_autonomo/src/teste1/Camera_Depth'
 os.mkdir(can1)
-can2 = './teste1/Camera_RGB'
+can2 = '/home/aluno/Documentos/carro_autonomo/src/teste1/Camera_RGB'
 os.mkdir(can2)
 
 # Define  a cameras que serã usadas na captura multicameras
@@ -189,7 +189,7 @@ def listener():
       end_time = time.time()
 
 
-  velocity_input = 6 # 2.8
+  velocity_input = 3 # 2.8
   left_motor = Float32()
   right_motor = Float32()
   r = 6.3407e-01 / 2.0
